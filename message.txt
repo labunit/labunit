@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LabGlass - Vidros para Laboratório de Qualidade</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #1a4b8c;
+            --secondary-blue: #2a6fc9;
+            --light-blue: #e6f0fa;
+            --accent-blue: #0d3b66;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-blue);
+            border-bottom: 2px solid var(--secondary-blue);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+        
+        .footer {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+        
+        .cart-badge {
+            top: -8px;
+            right: -8px;
+        }
+        
+        .category-card {
+            transition: all 0.3s ease;
+        }
+        
+        .category-card:hover {
+            background-color: var(--light-blue);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-flask text-2xl text-blue-600"></i>
+                <h1 class="text-2xl font-bold text-blue-800">Lab<span class="text-blue-600">Glass</span></h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-gray-700 font-medium py-2">Início</a>
+                <a href="#products" class="nav-link text-gray-700 font-medium py-2">Produtos</a>
+                <a href="#categories" class="nav-link text-gray-700 font-medium py-2">Categorias</a>
+                <a href="#about" class="nav-link text-gray-700 font-medium py-2">Sobre Nós</a>
+                <a href="#contact" class="nav-link text-gray-700 font-medium py-2">Contato</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <i class="fas fa-shopping-cart text-xl text-blue-600 cursor-pointer"></i>
+                    <span class="cart-badge absolute bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                </div>
+                <button class="md:hidden text-blue-600 text-xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0 animate-fadeIn">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Vidros para Laboratório de Alta Qualidade</h2>
+                <p class="text-xl mb-8 opacity-90">Equipamentos precisos para suas pesquisas e experimentos científicos.</p>
+                <div class="flex space-x-4">
+                    <button class="btn-primary text-white px-6 py-3 rounded-lg font-medium shadow-lg">Ver Produtos</button>
+                    <button class="bg-white text-blue-800 px-6 py-3 rounded-lg font-medium shadow-lg border border-blue-200">Catálogo Completo</button>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center animate-fadeIn" style="animation-delay: 0.2s;">
+                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                     alt="Vidraria de laboratório" 
+                     class="rounded-lg shadow-2xl max-w-full h-auto max-h-96 object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-blue-50 p-6 rounded-lg text-center">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-blue-800">Qualidade Garantida</h3>
+                    <p class="text-gray-600">Prodros testados e aprovados por laboratórios de referência.</p>
+                </div>
+                
+                <div class="bg-blue-50 p-6 rounded-lg text-center">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-truck text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-blue-800">Entrega Rápida</h3>
+                    <p class="text-gray-600">Entregamos em todo o Brasil com prazos reduzidos.</p>
+                </div>
+                
+                <div class="bg-blue-50 p-6 rounded-lg text-center">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-headset text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-blue-800">Suporte Técnico</h3>
+                    <p class="text-gray-600">Equipe especializada para tirar todas suas dúvidas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-800">Nossas Categorias</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="category-card bg-white p-6 rounded-lg shadow-md text-center cursor-pointer border border-blue-100">
+                    <div class="bg-blue-50 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-vial text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-blue-800">Tubos de Ensaio</h3>
+                    <p class="text-sm text-gray-600 mt-2">Vários tamanhos e especificações</p>
+                </div>
+                
+                <div class="category-card bg-white p-6 rounded-lg shadow-md text-center cursor-pointer border border-blue-100">
+                    <div class="bg-blue-50 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-flask text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-blue-800">Frascos</h3>
+                    <p class="text-sm text-gray-600 mt-2">Erlenmeyer, balões e mais</p>
+                </div>
+                
+                <div class="category-card bg-white p-6 rounded-lg shadow-md text-center cursor-pointer border border-blue-100">
+                    <div class="bg-blue-50 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-tint text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-blue-800">Pipetas</h3>
+                    <p class="text-sm text-gray-600 mt-2">Volumétricas e graduadas</p>
+                </div>
+                
+                <div class="category-card bg-white p-6 rounded-lg shadow-md text-center cursor-pointer border border-blue-100">
+                    <div class="bg-blue-50 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-microscope text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-blue-800">Lâminas</h3>
+                    <p class="text-sm text-gray-600 mt-2">Para microscopia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-800">Produtos em Destaque</h2>
+                <a href="#" class="text-blue-600 font-medium flex items-center">
+                    Ver todos <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100 transition-all duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1581093057305-25ad20b1a0b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
+                             alt="Kit de vidraria" 
+                             class="w-full h-48 object-cover">
+                        <div class="absolute top-2 right-2 bg-blue-600 text-white text-xs px-2 py-1 rounded">Novo</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1 text-blue-800">Kit Básico de Vidraria</h3>
+                        <p class="text-gray-600 text-sm mb-3">Conjunto com 12 peças essenciais</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-blue-600">R$ 289,90</span>
+                            <button class="bg-blue-100 text-blue-600 p-2 rounded-full hover:bg-blue-200">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100 transition-all duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                             alt="Béquer" 
+                             class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1 text-blue-800">Béquer de 250ml</h3>
+                        <p class="text-gray-600 text-sm mb-3">Graduado, borossilicato</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-blue-600">R$ 42,90</span>
+                            <button class="bg-blue-100 text-blue-600 p-2 rounded-full hover:bg-blue-200">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100 transition-all duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
+                             alt="Pipeta" 
+                             class="w-full h-48 object-cover">
+                        <div class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded">Promoção</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1 text-blue-800">Pipeta Volumétrica 10ml</h3>
+                        <p class="text-gray-600 text-sm mb-3">Classe A, alta precisão</p>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="font-bold text-blue-600">R$ 28,90</span>
+                                <span class="text-sm text-gray-400 line-through ml-2">R$ 34,90</span>
+                            </div>
+                            <button class="bg-blue-100 text-blue-600 p-2 rounded-full hover:bg-blue-200">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100 transition-all duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1581093057927-02e5bb8a8e2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
+                             alt="Tubos de ensaio" 
+                             class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1 text-blue-800">Tubos de Ensaio 16x150mm</h3>
+                        <p class="text-gray-600 text-sm mb-3">Pacote com 50 unidades</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-blue-600">R$ 79,90</span>
+                            <button class="bg-blue-100 text-blue-600 p-2 rounded-full hover:bg-blue-200">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-800">O que dizem nossos clientes</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Produtos de excelente qualidade e entrega super rápida. Nosso laboratório universitário só compra aqui agora."</p>
+                    <div class="flex items-center">
+                        <div class="bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                            <span class="text-blue-600 font-bold">AM</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-blue-800">Ana M.</h4>
+                            <p class="text-gray-500 text-sm">Pesquisadora - UFMG</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Atendimento excelente e produtos que realmente atendem às especificações técnicas que precisamos."</p>
+                    <div class="flex items-center">
+                        <div class="bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                            <span class="text-blue-600 font-bold">CR</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-blue-800">Carlos R.</h4>
+                            <p class="text-gray-500 text-sm">Laboratório Farmacêutico</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Preços competitivos e variedade de produtos. Facilitou muito nosso processo de compras para o laboratório escolar."</p>
+                    <div class="flex items-center">
+                        <div class="bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                            <span class="text-blue-600 font-bold">PS</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-blue-800">Patrícia S.</h4>
+                            <p class="text-gray-500 text-sm">Professora - Colégio Técnico</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                         alt="Nosso laboratório" 
+                         class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6 text-blue-800">Sobre a LabGlass</h2>
+                    <p class="text-gray-600 mb-4">Fundada em 2010, a LabGlass é especializada na fabricação e distribuição de vidraria para laboratório de alta qualidade.</p>
+                    <p class="text-gray-600 mb-4">Nossos produtos são fabricados com vidro borossilicato, garantindo resistência térmica e química para os mais diversos tipos de experimentos e análises.</p>
+                    <p class="text-gray-600 mb-6">Trabalhamos com os principais laboratórios de pesquisa, instituições de ensino e indústrias do país, fornecendo produtos que atendem aos mais rigorosos padrões de qualidade.</p>
+                    <button class="btn-primary text-white px-6 py-3 rounded-lg font-medium">Nossa História</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Receba Nossas Ofertas</h2>
+            <p class="mb-8 max-w-2xl mx-auto opacity-90">Cadastre-se para receber promoções exclusivas e novidades sobre nossos produtos.</p>
+            
+            <div class="max-w-md mx-auto flex">
+                <input type="email" placeholder="Seu melhor e-mail" class="flex-grow px-4 py-3 rounded-l-lg focus:outline-none text-gray-800">
+                <button class="bg-blue-800 px-6 py-3 rounded-r-lg font-medium hover:bg-blue-900 transition">Cadastrar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-800">Entre em Contato</h2>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <div class="bg-blue-50 p-6 rounded-lg mb-6">
+                        <h3 class="text-xl font-bold mb-4 text-blue-800">Informações de Contato</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-blue-600 mt-1 mr-3"></i>
+                                <p>Av. das Ciências, 1234 - Centro, São Paulo/SP</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone-alt text-blue-600 mr-3"></i>
+                                <p>(11) 1234-5678</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-blue-600 mr-3"></i>
+                                <p>contato@labglass.com.br</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-4 text-blue-800">Horário de Atendimento</h3>
+                        <div class="space-y-2">
+                            <p><span class="font-medium">Segunda a Sexta:</span> 8h às 18h</p>
+                            <p><span class="font-medium">Sábado:</span> 9h às 13h</p>
+                            <p><span class="font-medium">Domingo:</span> Fechado</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label for="name" class="block text-gray-700 mb-2">Nome</label>
+                                <input
+</html>
